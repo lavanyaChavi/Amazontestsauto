@@ -1,0 +1,2 @@
+*** Variables ***
+${childwindowtitle} Amazon.in: Buy Acer Aspire 12th Gen Intel Core i3-12100 Processor Desktop (Windows 11 Home/8 GB RAM/512 GB SATA SSD/MSO) with Standard Wired Keyboard and Wired Mouse, 3 Years Warranty Online at Low Prices in India | Acer Reviews & Ratings

@@ -1,0 +1,1774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on darwin)" generated="20240418 16:30:35.546" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="/Users/chandu/PycharmProjects/Amazon/Tests/Login.robot">
+<test id="s1-t1" name="Amazon testcases" line="7">
+<kw name="Open URL" library="CommonKeywords">
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:30:35.646" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102540850&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:35.646" endtime="20240418 16:30:35.646"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240418 16:30:35.646" endtime="20240418 16:30:35.646"/>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240418 16:30:35.646" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20240418 16:30:35.646" endtime="20240418 16:30:36.880"/>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240418 16:30:36.880" level="INFO">Opening url 'http://www.google.com'</msg>
+<status status="PASS" starttime="20240418 16:30:36.880" endtime="20240418 16:30:39.895"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:35.646" endtime="20240418 16:30:39.895"/>
+</kw>
+<kw name="Amazon Login" library="AmazonKeywords">
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Searchbox}</arg>
+<arg>${Searchinput}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:39.897" level="INFO">Typing text 'Amazon login' into text field '//textarea[@aria-label="Search"]'.</msg>
+<status status="PASS" starttime="20240418 16:30:39.896" endtime="20240418 16:30:40.022"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:40.187" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1452.png"&gt;&lt;img src="selenium-screenshot-1452.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:40.022" endtime="20240418 16:30:40.187"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${find}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:30:40.187" endtime="20240418 16:30:40.193"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240418 16:30:42.196" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240418 16:30:40.193" endtime="20240418 16:30:42.197"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:42.390" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1453.png"&gt;&lt;img src="selenium-screenshot-1453.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:42.198" endtime="20240418 16:30:42.390"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${elements}</var>
+<arg>${Getprint}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240418 16:30:42.396" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.25")&gt;, &lt;selenium.webdriv...</msg>
+<status status="PASS" starttime="20240418 16:30:42.390" endtime="20240418 16:30:42.396"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{texts}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240418 16:30:42.396" level="INFO">@{texts} = [ ]</msg>
+<status status="PASS" starttime="20240418 16:30:42.396" endtime="20240418 16:30:42.396"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{elements}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.25")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.402" level="INFO">${text} = amazon login</msg>
+<status status="PASS" starttime="20240418 16:30:42.396" endtime="20240418 16:30:42.402"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.402" endtime="20240418 16:30:42.402"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.396" endtime="20240418 16:30:42.402"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.26")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.407" level="INFO">${text} = amazon login online</msg>
+<status status="PASS" starttime="20240418 16:30:42.403" endtime="20240418 16:30:42.407"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.407" endtime="20240418 16:30:42.408"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.402" endtime="20240418 16:30:42.408"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.27")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.411" level="INFO">${text} = amazon login india</msg>
+<status status="PASS" starttime="20240418 16:30:42.408" endtime="20240418 16:30:42.411"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.411" endtime="20240418 16:30:42.411"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.408" endtime="20240418 16:30:42.411"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.28")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.415" level="INFO">${text} = amazon login online shopping</msg>
+<status status="PASS" starttime="20240418 16:30:42.412" endtime="20240418 16:30:42.415"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.415" endtime="20240418 16:30:42.415"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.411" endtime="20240418 16:30:42.415"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.29")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.419" level="INFO">${text} = amazon login jobs</msg>
+<status status="PASS" starttime="20240418 16:30:42.415" endtime="20240418 16:30:42.419"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.419" endtime="20240418 16:30:42.419"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.415" endtime="20240418 16:30:42.419"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.30")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.422" level="INFO">${text} = amazon login website</msg>
+<status status="PASS" starttime="20240418 16:30:42.419" endtime="20240418 16:30:42.422"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.422" endtime="20240418 16:30:42.423"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.419" endtime="20240418 16:30:42.423"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.31")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.426" level="INFO">${text} = amazon login seller</msg>
+<status status="PASS" starttime="20240418 16:30:42.423" endtime="20240418 16:30:42.426"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.426" endtime="20240418 16:30:42.426"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.423" endtime="20240418 16:30:42.426"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.32")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.430" level="INFO">${text} = amazon login and password</msg>
+<status status="PASS" starttime="20240418 16:30:42.426" endtime="20240418 16:30:42.430"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.430" endtime="20240418 16:30:42.430"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.426" endtime="20240418 16:30:42.430"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.33")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.434" level="INFO">${text} = amazon login prime video</msg>
+<status status="PASS" starttime="20240418 16:30:42.430" endtime="20240418 16:30:42.434"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.434" endtime="20240418 16:30:42.434"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.430" endtime="20240418 16:30:42.434"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.83637676A4EF1E10E0FEFD9EA5F65FE6.e.34")&gt;</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${text}</var>
+<arg>${element.text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240418 16:30:42.438" level="INFO">${text} = amazon login with otp</msg>
+<status status="PASS" starttime="20240418 16:30:42.434" endtime="20240418 16:30:42.438"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240418 16:30:42.438" endtime="20240418 16:30:42.438"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:42.434" endtime="20240418 16:30:42.438"/>
+</iter>
+<status status="PASS" starttime="20240418 16:30:42.396" endtime="20240418 16:30:42.438"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${texts}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240418 16:30:42.438" level="INFO">['amazon login', 'amazon login online', 'amazon login india', 'amazon login online shopping', 'amazon login jobs', 'amazon login website', 'amazon login seller', 'amazon login and password', 'amazon login prime video', 'amazon login with otp']</msg>
+<status status="PASS" starttime="20240418 16:30:42.438" endtime="20240418 16:30:42.438"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:42.583" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1454.png"&gt;&lt;img src="selenium-screenshot-1454.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:42.438" endtime="20240418 16:30:42.583"/>
+</kw>
+<kw name="Press Keys" library="Selenium2Library">
+<arg>${find}</arg>
+<arg>\\13</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240418 16:30:42.583" level="INFO">Sending key(s) ('\\13',) to //span[contains(text(), 'amazon')] element.</msg>
+<msg timestamp="20240418 16:30:43.018" level="INFO">Sending keys \13</msg>
+<status status="PASS" starttime="20240418 16:30:42.583" endtime="20240418 16:30:43.797"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:43.979" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1455.png"&gt;&lt;img src="selenium-screenshot-1455.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:43.797" endtime="20240418 16:30:43.979"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Clickonlogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:43.979" level="INFO">Clicking element '(//h3[@class='LC20lb MBeuO DKV0Md' and text()='Sign in'])[1]'.</msg>
+<status status="PASS" starttime="20240418 16:30:43.979" endtime="20240418 16:30:45.518"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240418 16:30:50.519" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240418 16:30:45.518" endtime="20240418 16:30:50.519"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Emailfield}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:50.521" level="INFO">Typing text 'laavanya37@gmail.com' into text field '//input[@id='ap_email']'.</msg>
+<status status="PASS" starttime="20240418 16:30:50.520" endtime="20240418 16:30:50.602"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Passwordfield}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:50.602" level="INFO">Typing text 'Password@123' into text field '//input[@id='ap_password']'.</msg>
+<status status="PASS" starttime="20240418 16:30:50.602" endtime="20240418 16:30:50.642"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${SignInbtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:50.642" level="INFO">Clicking element '//input[@id='signInSubmit']'.</msg>
+<status status="PASS" starttime="20240418 16:30:50.642" endtime="20240418 16:30:50.676"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:52.392" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1456.png"&gt;&lt;img src="selenium-screenshot-1456.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:50.677" endtime="20240418 16:30:52.392"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:39.895" endtime="20240418 16:30:52.392"/>
+</kw>
+<kw name="Select Product" library="AmazonKeywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${SelectAll}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:30:52.392" endtime="20240418 16:30:52.398"/>
+</kw>
+<kw name="Select From List By Label" library="Selenium2Library">
+<arg>${SelectAll}</arg>
+<arg>Electronics</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20240418 16:30:52.398" level="INFO">Selecting options from selection list '//Select[@id='searchDropdownBox']' by label Electronics.</msg>
+<status status="PASS" starttime="20240418 16:30:52.398" endtime="20240418 16:30:52.432"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${twotabsearchtextbox}</arg>
+<arg>dell computers</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:52.432" level="INFO">Typing text 'dell computers' into text field '//input[@id='twotabsearchtextbox']'.</msg>
+<status status="PASS" starttime="20240418 16:30:52.432" endtime="20240418 16:30:52.471"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Navsearchsubmitbtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:52.472" level="INFO">Clicking element '//input[@id="nav-search-submit-button"]'.</msg>
+<status status="PASS" starttime="20240418 16:30:52.471" endtime="20240418 16:30:55.274"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:55.501" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1457.png"&gt;&lt;img src="selenium-screenshot-1457.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:55.274" endtime="20240418 16:30:55.501"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${expand_button_enabled}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${expandall}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${expandall}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240418 16:30:55.514" level="INFO">Element '//a[contains(@class, 'sf-collapsible-left-nav-expand-all') and not(contains(@class, 'sf-link-disabled'))]' is displayed.</msg>
+<status status="PASS" starttime="20240418 16:30:55.501" endtime="20240418 16:30:55.514"/>
+</kw>
+<msg timestamp="20240418 16:30:55.514" level="INFO">${expand_button_enabled} = True</msg>
+<status status="PASS" starttime="20240418 16:30:55.501" endtime="20240418 16:30:55.514"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${expand_button_enabled}</arg>
+<arg>Click Element</arg>
+<arg>${expandall}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${expandall}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:55.515" level="INFO">Clicking element '//a[contains(@class, 'sf-collapsible-left-nav-expand-all') and not(contains(@class, 'sf-link-disabled'))]'.</msg>
+<status status="PASS" starttime="20240418 16:30:55.514" endtime="20240418 16:30:55.583"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:55.514" endtime="20240418 16:30:55.584"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${Lowprice}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:30:55.585" endtime="20240418 16:30:55.864"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:30:55.865" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:30:55.864" endtime="20240418 16:30:55.871"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${Lowprice}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:30:55.871" endtime="20240418 16:30:55.896"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Lowprice}</arg>
+<arg>30000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:55.896" level="INFO">Typing text '30000' into text field '//input[@id='low-price']'.</msg>
+<status status="PASS" starttime="20240418 16:30:55.896" endtime="20240418 16:30:55.943"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Highprice}</arg>
+<arg>50000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:55.944" level="INFO">Typing text '50000' into text field '//input[@id='high-price']'.</msg>
+<status status="PASS" starttime="20240418 16:30:55.944" endtime="20240418 16:30:55.982"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${Gobtn}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:30:55.982" endtime="20240418 16:30:55.988"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Gobtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:55.988" level="INFO">Clicking element '(//input[@class="a-button-input" and @type="submit"])[2]'.</msg>
+<status status="PASS" starttime="20240418 16:30:55.988" endtime="20240418 16:30:57.522"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${Starmedium4}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:30:57.522" endtime="20240418 16:30:57.531"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${expand_button_enabled}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${expandall}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${expandall}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240418 16:30:57.541" level="INFO">Element '//a[contains(@class, 'sf-collapsible-left-nav-expand-all') and not(contains(@class, 'sf-link-disabled'))]' is displayed.</msg>
+<status status="PASS" starttime="20240418 16:30:57.531" endtime="20240418 16:30:57.541"/>
+</kw>
+<msg timestamp="20240418 16:30:57.541" level="INFO">${expand_button_enabled} = True</msg>
+<status status="PASS" starttime="20240418 16:30:57.531" endtime="20240418 16:30:57.541"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${expand_button_enabled}</arg>
+<arg>Click Element</arg>
+<arg>${expandall}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${expandall}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:57.542" level="INFO">Clicking element '//a[contains(@class, 'sf-collapsible-left-nav-expand-all') and not(contains(@class, 'sf-link-disabled'))]'.</msg>
+<status status="PASS" starttime="20240418 16:30:57.541" endtime="20240418 16:30:57.592"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:57.541" endtime="20240418 16:30:57.593"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${Starmedium4}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:30:57.593" endtime="20240418 16:30:57.896"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:30:57.896" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:30:57.896" endtime="20240418 16:30:57.898"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Starmedium4}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:57.898" level="INFO">Clicking element '//i[contains(@class, 'a-star-medium-4')]'.</msg>
+<status status="PASS" starttime="20240418 16:30:57.898" endtime="20240418 16:30:57.943"/>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240418 16:30:58.143" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1458.png"&gt;&lt;img src="selenium-screenshot-1458.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240418 16:30:57.943" endtime="20240418 16:30:58.143"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:52.392" endtime="20240418 16:30:58.143"/>
+</kw>
+<kw name="Validate Prices On Pages" library="AmazonKeywords">
+<arg>${PageTwo}</arg>
+<arg>${AssignedPrice}</arg>
+<arg>30000</arg>
+<arg>50000</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${AssignedPrice}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:30:58.143" endtime="20240418 16:30:58.781"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:30:58.781" endtime="20240418 16:30:59.004"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${page_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:30:59.004" endtime="20240418 16:30:59.278"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:30:59.279" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:30:59.278" endtime="20240418 16:30:59.284"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:30:59.284" level="INFO">Clicking element '//a[@aria-label='Go to page 2']'.</msg>
+<status status="PASS" starttime="20240418 16:30:59.284" endtime="20240418 16:30:59.363"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${product_price_locator}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:30:59.363" endtime="20240418 16:31:00.011"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${prices}</var>
+<arg>${product_price_locator}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240418 16:31:00.016" level="INFO">${prices} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.328")&gt;, &lt;selenium.webdri...</msg>
+<status status="PASS" starttime="20240418 16:31:00.011" endtime="20240418 16:31:00.016"/>
+</kw>
+<for flavor="IN">
+<var>${price}</var>
+<value>@{prices}</value>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.328")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:00.023" level="INFO">${price_text} = 34,999</msg>
+<status status="PASS" starttime="20240418 16:31:00.016" endtime="20240418 16:31:00.023"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:00.023" level="INFO">${price_value} = 34999</msg>
+<status status="PASS" starttime="20240418 16:31:00.023" endtime="20240418 16:31:00.023"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:00.023" endtime="20240418 16:31:00.024"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:00.016" endtime="20240418 16:31:00.024"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.329")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:00.028" level="INFO">${price_text} = 33,299</msg>
+<status status="PASS" starttime="20240418 16:31:00.024" endtime="20240418 16:31:00.028"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:00.028" level="INFO">${price_value} = 33299</msg>
+<status status="PASS" starttime="20240418 16:31:00.028" endtime="20240418 16:31:00.028"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:00.028" endtime="20240418 16:31:00.029"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:00.024" endtime="20240418 16:31:00.029"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.330")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:00.032" level="INFO">${price_text} = 33,299</msg>
+<status status="PASS" starttime="20240418 16:31:00.029" endtime="20240418 16:31:00.032"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:00.033" level="INFO">${price_value} = 33299</msg>
+<status status="PASS" starttime="20240418 16:31:00.033" endtime="20240418 16:31:00.033"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:00.033" endtime="20240418 16:31:00.033"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:00.029" endtime="20240418 16:31:00.033"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.331")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:00.038" level="INFO">${price_text} = 32,490</msg>
+<status status="PASS" starttime="20240418 16:31:00.033" endtime="20240418 16:31:00.039"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:00.039" level="INFO">${price_value} = 32490</msg>
+<status status="PASS" starttime="20240418 16:31:00.039" endtime="20240418 16:31:00.039"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:00.039" endtime="20240418 16:31:00.039"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:00.033" endtime="20240418 16:31:00.039"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.332")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:00.043" level="INFO">${price_text} = 45,800</msg>
+<status status="PASS" starttime="20240418 16:31:00.039" endtime="20240418 16:31:00.043"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:00.043" level="INFO">${price_value} = 45800</msg>
+<status status="PASS" starttime="20240418 16:31:00.043" endtime="20240418 16:31:00.043"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:00.044" endtime="20240418 16:31:00.044"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:00.039" endtime="20240418 16:31:00.044"/>
+</iter>
+<status status="PASS" starttime="20240418 16:31:00.016" endtime="20240418 16:31:00.044"/>
+</for>
+<status status="PASS" starttime="20240418 16:30:58.143" endtime="20240418 16:31:00.044"/>
+</kw>
+<kw name="Pageload and Scroll" library="CommonKeywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${AssignedPrice}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:31:00.044" endtime="20240418 16:31:00.048"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${PageOne}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:00.048" endtime="20240418 16:31:01.151"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${PageOne}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:31:01.151" endtime="20240418 16:31:01.432"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:31:01.433" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:31:01.432" endtime="20240418 16:31:01.439"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:00.044" endtime="20240418 16:31:01.439"/>
+</kw>
+<kw name="Validate Prices On Pages" library="AmazonKeywords">
+<arg>${PageOne}</arg>
+<arg>${AssignedPrice}</arg>
+<arg>30000</arg>
+<arg>50000</arg>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${AssignedPrice}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:31:01.440" endtime="20240418 16:31:01.500"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${page_locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:01.500" endtime="20240418 16:31:01.509"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${page_locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:31:01.509" endtime="20240418 16:31:01.781"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:31:01.783" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:31:01.782" endtime="20240418 16:31:01.801"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${page_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:01.802" level="INFO">Clicking element '//a[@aria-label='Go to page 1']'.</msg>
+<status status="PASS" starttime="20240418 16:31:01.801" endtime="20240418 16:31:01.862"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${product_price_locator}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:01.862" endtime="20240418 16:31:02.769"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${prices}</var>
+<arg>${product_price_locator}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.776" level="INFO">${prices} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.375")&gt;, &lt;selenium.webdri...</msg>
+<status status="PASS" starttime="20240418 16:31:02.769" endtime="20240418 16:31:02.776"/>
+</kw>
+<for flavor="IN">
+<var>${price}</var>
+<value>@{prices}</value>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.375")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.781" level="INFO">${price_text} = 40,999</msg>
+<status status="PASS" starttime="20240418 16:31:02.777" endtime="20240418 16:31:02.781"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.782" level="INFO">${price_value} = 40999</msg>
+<status status="PASS" starttime="20240418 16:31:02.782" endtime="20240418 16:31:02.782"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.782" endtime="20240418 16:31:02.782"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.777" endtime="20240418 16:31:02.782"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.376")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.787" level="INFO">${price_text} = 38,034</msg>
+<status status="PASS" starttime="20240418 16:31:02.782" endtime="20240418 16:31:02.787"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.787" level="INFO">${price_value} = 38034</msg>
+<status status="PASS" starttime="20240418 16:31:02.787" endtime="20240418 16:31:02.787"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.787" endtime="20240418 16:31:02.787"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.782" endtime="20240418 16:31:02.787"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.377")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.795" level="INFO">${price_text} = 49,490</msg>
+<status status="PASS" starttime="20240418 16:31:02.787" endtime="20240418 16:31:02.795"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.795" level="INFO">${price_value} = 49490</msg>
+<status status="PASS" starttime="20240418 16:31:02.795" endtime="20240418 16:31:02.795"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.795" endtime="20240418 16:31:02.796"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.787" endtime="20240418 16:31:02.796"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.378")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.800" level="INFO">${price_text} = 49,000</msg>
+<status status="PASS" starttime="20240418 16:31:02.796" endtime="20240418 16:31:02.800"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.800" level="INFO">${price_value} = 49000</msg>
+<status status="PASS" starttime="20240418 16:31:02.800" endtime="20240418 16:31:02.800"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.800" endtime="20240418 16:31:02.801"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.796" endtime="20240418 16:31:02.801"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.379")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.812" level="INFO">${price_text} = 31,890</msg>
+<status status="PASS" starttime="20240418 16:31:02.801" endtime="20240418 16:31:02.812"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.813" level="INFO">${price_value} = 31890</msg>
+<status status="PASS" starttime="20240418 16:31:02.812" endtime="20240418 16:31:02.813"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.813" endtime="20240418 16:31:02.813"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.801" endtime="20240418 16:31:02.813"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.380")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.823" level="INFO">${price_text} = 30,990</msg>
+<status status="PASS" starttime="20240418 16:31:02.813" endtime="20240418 16:31:02.823"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.823" level="INFO">${price_value} = 30990</msg>
+<status status="PASS" starttime="20240418 16:31:02.823" endtime="20240418 16:31:02.823"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.823" endtime="20240418 16:31:02.823"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.813" endtime="20240418 16:31:02.823"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.381")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.828" level="INFO">${price_text} = 38,999</msg>
+<status status="PASS" starttime="20240418 16:31:02.823" endtime="20240418 16:31:02.828"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.828" level="INFO">${price_value} = 38999</msg>
+<status status="PASS" starttime="20240418 16:31:02.828" endtime="20240418 16:31:02.828"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.828" endtime="20240418 16:31:02.829"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.823" endtime="20240418 16:31:02.829"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.382")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.833" level="INFO">${price_text} = 39,840</msg>
+<status status="PASS" starttime="20240418 16:31:02.829" endtime="20240418 16:31:02.833"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.833" level="INFO">${price_value} = 39840</msg>
+<status status="PASS" starttime="20240418 16:31:02.833" endtime="20240418 16:31:02.833"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.833" endtime="20240418 16:31:02.833"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.829" endtime="20240418 16:31:02.833"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.383")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.838" level="INFO">${price_text} = 46,500</msg>
+<status status="PASS" starttime="20240418 16:31:02.833" endtime="20240418 16:31:02.838"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.838" level="INFO">${price_value} = 46500</msg>
+<status status="PASS" starttime="20240418 16:31:02.838" endtime="20240418 16:31:02.838"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.838" endtime="20240418 16:31:02.838"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.833" endtime="20240418 16:31:02.838"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.384")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.843" level="INFO">${price_text} = 31,659</msg>
+<status status="PASS" starttime="20240418 16:31:02.838" endtime="20240418 16:31:02.843"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.843" level="INFO">${price_value} = 31659</msg>
+<status status="PASS" starttime="20240418 16:31:02.843" endtime="20240418 16:31:02.843"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.843" endtime="20240418 16:31:02.844"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.838" endtime="20240418 16:31:02.844"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.385")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.848" level="INFO">${price_text} = 45,109</msg>
+<status status="PASS" starttime="20240418 16:31:02.844" endtime="20240418 16:31:02.848"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.848" level="INFO">${price_value} = 45109</msg>
+<status status="PASS" starttime="20240418 16:31:02.848" endtime="20240418 16:31:02.848"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.848" endtime="20240418 16:31:02.849"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.844" endtime="20240418 16:31:02.849"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.386")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.853" level="INFO">${price_text} = 31,995</msg>
+<status status="PASS" starttime="20240418 16:31:02.849" endtime="20240418 16:31:02.853"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.853" level="INFO">${price_value} = 31995</msg>
+<status status="PASS" starttime="20240418 16:31:02.853" endtime="20240418 16:31:02.853"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.853" endtime="20240418 16:31:02.854"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.849" endtime="20240418 16:31:02.854"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.387")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.861" level="INFO">${price_text} = 34,992</msg>
+<status status="PASS" starttime="20240418 16:31:02.854" endtime="20240418 16:31:02.861"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.861" level="INFO">${price_value} = 34992</msg>
+<status status="PASS" starttime="20240418 16:31:02.861" endtime="20240418 16:31:02.861"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.861" endtime="20240418 16:31:02.862"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.854" endtime="20240418 16:31:02.862"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.388")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.866" level="INFO">${price_text} = 38,109</msg>
+<status status="PASS" starttime="20240418 16:31:02.862" endtime="20240418 16:31:02.866"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.867" level="INFO">${price_value} = 38109</msg>
+<status status="PASS" starttime="20240418 16:31:02.867" endtime="20240418 16:31:02.867"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.867" endtime="20240418 16:31:02.867"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.862" endtime="20240418 16:31:02.867"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.389")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.871" level="INFO">${price_text} = 37,109</msg>
+<status status="PASS" starttime="20240418 16:31:02.867" endtime="20240418 16:31:02.871"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.871" level="INFO">${price_value} = 37109</msg>
+<status status="PASS" starttime="20240418 16:31:02.871" endtime="20240418 16:31:02.871"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.871" endtime="20240418 16:31:02.872"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.867" endtime="20240418 16:31:02.872"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.390")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.876" level="INFO">${price_text} = 36,492</msg>
+<status status="PASS" starttime="20240418 16:31:02.872" endtime="20240418 16:31:02.876"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.877" level="INFO">${price_value} = 36492</msg>
+<status status="PASS" starttime="20240418 16:31:02.877" endtime="20240418 16:31:02.877"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.877" endtime="20240418 16:31:02.877"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.872" endtime="20240418 16:31:02.877"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.391")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.880" level="INFO">${price_text} = 39,500</msg>
+<status status="PASS" starttime="20240418 16:31:02.877" endtime="20240418 16:31:02.880"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.881" level="INFO">${price_value} = 39500</msg>
+<status status="PASS" starttime="20240418 16:31:02.880" endtime="20240418 16:31:02.881"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.881" endtime="20240418 16:31:02.881"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.877" endtime="20240418 16:31:02.881"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.392")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.884" level="INFO">${price_text} = 47,100</msg>
+<status status="PASS" starttime="20240418 16:31:02.881" endtime="20240418 16:31:02.884"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.884" level="INFO">${price_value} = 47100</msg>
+<status status="PASS" starttime="20240418 16:31:02.884" endtime="20240418 16:31:02.884"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.884" endtime="20240418 16:31:02.885"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.881" endtime="20240418 16:31:02.885"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.393")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.888" level="INFO">${price_text} = 47,990</msg>
+<status status="PASS" starttime="20240418 16:31:02.885" endtime="20240418 16:31:02.888"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.888" level="INFO">${price_value} = 47990</msg>
+<status status="PASS" starttime="20240418 16:31:02.888" endtime="20240418 16:31:02.888"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.888" endtime="20240418 16:31:02.888"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.885" endtime="20240418 16:31:02.888"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.394")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.892" level="INFO">${price_text} = 44,639</msg>
+<status status="PASS" starttime="20240418 16:31:02.888" endtime="20240418 16:31:02.892"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.892" level="INFO">${price_value} = 44639</msg>
+<status status="PASS" starttime="20240418 16:31:02.892" endtime="20240418 16:31:02.892"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.892" endtime="20240418 16:31:02.892"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.888" endtime="20240418 16:31:02.892"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.395")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.896" level="INFO">${price_text} = 49,990</msg>
+<status status="PASS" starttime="20240418 16:31:02.892" endtime="20240418 16:31:02.896"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.896" level="INFO">${price_value} = 49990</msg>
+<status status="PASS" starttime="20240418 16:31:02.896" endtime="20240418 16:31:02.896"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.896" endtime="20240418 16:31:02.896"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.892" endtime="20240418 16:31:02.896"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.396")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.900" level="INFO">${price_text} = 48,990</msg>
+<status status="PASS" starttime="20240418 16:31:02.896" endtime="20240418 16:31:02.900"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.900" level="INFO">${price_value} = 48990</msg>
+<status status="PASS" starttime="20240418 16:31:02.900" endtime="20240418 16:31:02.900"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.900" endtime="20240418 16:31:02.900"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.896" endtime="20240418 16:31:02.900"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.397")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.903" level="INFO">${price_text} = 38,990</msg>
+<status status="PASS" starttime="20240418 16:31:02.900" endtime="20240418 16:31:02.903"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.904" level="INFO">${price_value} = 38990</msg>
+<status status="PASS" starttime="20240418 16:31:02.904" endtime="20240418 16:31:02.904"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.904" endtime="20240418 16:31:02.904"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.900" endtime="20240418 16:31:02.904"/>
+</iter>
+<iter>
+<var name="${price}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.398")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${price_text}</var>
+<arg>${price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.907" level="INFO">${price_text} = 34,990</msg>
+<status status="PASS" starttime="20240418 16:31:02.904" endtime="20240418 16:31:02.907"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_value}</var>
+<arg>"${price_text}".replace('Rs ', '').replace(',', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240418 16:31:02.908" level="INFO">${price_value} = 34990</msg>
+<status status="PASS" starttime="20240418 16:31:02.907" endtime="20240418 16:31:02.908"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${min_price} &lt;= ${price_value} &lt;= ${max_price}</arg>
+<arg>Price is between Rs ${min_price} and Rs ${max_price}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.908" endtime="20240418 16:31:02.908"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.904" endtime="20240418 16:31:02.908"/>
+</iter>
+<status status="PASS" starttime="20240418 16:31:02.776" endtime="20240418 16:31:02.908"/>
+</for>
+<status status="PASS" starttime="20240418 16:31:01.439" endtime="20240418 16:31:02.908"/>
+</kw>
+<kw name="Five Star Ratings" library="AmazonKeywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${FivestarProduct}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:31:02.908" endtime="20240418 16:31:02.935"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${FiveSatars}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:02.935" endtime="20240418 16:31:02.949"/>
+</kw>
+<kw name="Get WebElements" library="Selenium2Library">
+<var>${Pageoneelements}</var>
+<arg>${FiveSatars}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.953" level="INFO">${Pageoneelements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.404")&gt;, &lt;selenium.webdri...</msg>
+<status status="PASS" starttime="20240418 16:31:02.949" endtime="20240418 16:31:02.953"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{texts}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240418 16:31:02.953" level="INFO">@{texts} = [ ]</msg>
+<status status="PASS" starttime="20240418 16:31:02.953" endtime="20240418 16:31:02.953"/>
+</kw>
+<for flavor="IN">
+<var>${Pageonedata}</var>
+<value>@{Pageoneelements}</value>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.404")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.957" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.953" endtime="20240418 16:31:02.957"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.957" endtime="20240418 16:31:02.957"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.953" endtime="20240418 16:31:02.957"/>
+</iter>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.405")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.960" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.957" endtime="20240418 16:31:02.960"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.960" endtime="20240418 16:31:02.960"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.957" endtime="20240418 16:31:02.960"/>
+</iter>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.406")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.964" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.960" endtime="20240418 16:31:02.964"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.964" endtime="20240418 16:31:02.964"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.960" endtime="20240418 16:31:02.964"/>
+</iter>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.407")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.968" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.964" endtime="20240418 16:31:02.968"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.968" endtime="20240418 16:31:02.968"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.964" endtime="20240418 16:31:02.968"/>
+</iter>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.408")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.971" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.968" endtime="20240418 16:31:02.971"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.971" endtime="20240418 16:31:02.971"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.968" endtime="20240418 16:31:02.971"/>
+</iter>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.409")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.975" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.972" endtime="20240418 16:31:02.975"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.975" endtime="20240418 16:31:02.975"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.971" endtime="20240418 16:31:02.975"/>
+</iter>
+<iter>
+<var name="${Pageonedata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.410")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pageonedata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.979" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:02.975" endtime="20240418 16:31:02.979"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${all_products}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:02.979" endtime="20240418 16:31:02.979"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.975" endtime="20240418 16:31:02.979"/>
+</iter>
+<status status="PASS" starttime="20240418 16:31:02.953" endtime="20240418 16:31:02.979"/>
+</for>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${Pagetwoenabled}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${PageTwo}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${PageTwo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240418 16:31:02.986" level="INFO">Element '//a[@aria-label='Go to page 2']' is displayed.</msg>
+<status status="PASS" starttime="20240418 16:31:02.979" endtime="20240418 16:31:02.986"/>
+</kw>
+<msg timestamp="20240418 16:31:02.986" level="INFO">${Pagetwoenabled} = True</msg>
+<status status="PASS" starttime="20240418 16:31:02.979" endtime="20240418 16:31:02.986"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${Pagetwoenabled}</arg>
+<arg>Click Element</arg>
+<arg>${PageTwo}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${PageTwo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:02.987" level="INFO">Clicking element '//a[@aria-label='Go to page 2']'.</msg>
+<status status="PASS" starttime="20240418 16:31:02.986" endtime="20240418 16:31:03.024"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.986" endtime="20240418 16:31:03.024"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${FivestarProduct}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:31:03.024" endtime="20240418 16:31:03.685"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${FiveSatars}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:03.685" endtime="20240418 16:31:03.694"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<var>${Pagetwoelements}</var>
+<arg>5x</arg>
+<arg>${waittime}</arg>
+<arg>Get WebElements</arg>
+<arg>${FiveSatars}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Get WebElements" library="Selenium2Library">
+<arg>${FiveSatars}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" starttime="20240418 16:31:03.694" endtime="20240418 16:31:03.697"/>
+</kw>
+<msg timestamp="20240418 16:31:03.697" level="INFO">${Pagetwoelements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.418")&gt;]</msg>
+<status status="PASS" starttime="20240418 16:31:03.694" endtime="20240418 16:31:03.697"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{texts}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240418 16:31:03.698" level="INFO">@{texts} = [ ]</msg>
+<status status="PASS" starttime="20240418 16:31:03.698" endtime="20240418 16:31:03.698"/>
+</kw>
+<for flavor="IN">
+<var>${Pagetwodata}</var>
+<value>@{Pagetwoelements}</value>
+<iter>
+<var name="${Pagetwodata}">&lt;selenium.webdriver.remote.webelement.WebElement (session="980a38cda5fa8f0ad4a191aa0d7e836c", element="f.8CA004DBB9315B0E18244E378B761461.d.AE287823E0D073E9489575BCE3B38CE1.e.418")&gt;</var>
+<kw name="Get Text" library="Selenium2Library">
+<var>${text}</var>
+<arg>${Pagetwodata}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:03.701" level="INFO">${text} = </msg>
+<status status="PASS" starttime="20240418 16:31:03.698" endtime="20240418 16:31:03.701"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${text}' == '5.0 out of 5 stars'</arg>
+<arg>Append To List</arg>
+<arg>${texts}</arg>
+<arg>${text}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240418 16:31:03.701" endtime="20240418 16:31:03.702"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:03.698" endtime="20240418 16:31:03.702"/>
+</iter>
+<status status="PASS" starttime="20240418 16:31:03.698" endtime="20240418 16:31:03.702"/>
+</for>
+<kw name="Log Many" library="BuiltIn">
+<arg>${texts}</arg>
+<doc>Logs the given messages as separate entries using the INFO level.</doc>
+<msg timestamp="20240418 16:31:03.702" level="INFO">[]</msg>
+<status status="PASS" starttime="20240418 16:31:03.702" endtime="20240418 16:31:03.702"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240418 16:31:06.704" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240418 16:31:03.702" endtime="20240418 16:31:06.705"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${PageOne}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:31:06.706" endtime="20240418 16:31:06.721"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${PageOne}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:31:06.721" endtime="20240418 16:31:07.015"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:31:07.015" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:31:07.015" endtime="20240418 16:31:07.032"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${PageOne}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:07.033" level="INFO">Clicking element '//a[@aria-label='Go to page 1']'.</msg>
+<status status="PASS" starttime="20240418 16:31:07.032" endtime="20240418 16:31:07.090"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:02.908" endtime="20240418 16:31:07.090"/>
+</kw>
+<kw name="WishList" library="AmazonKeywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<arg>${FivestarProduct}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20240418 16:31:07.091" endtime="20240418 16:31:07.755"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="Selenium2Library">
+<arg>${FivestarProduct}</arg>
+<arg>${waittime}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20240418 16:31:07.755" endtime="20240418 16:31:07.780"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${FivestarProduct}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:31:07.780" endtime="20240418 16:31:08.065"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:31:08.065" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:31:08.065" endtime="20240418 16:31:08.068"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240418 16:31:11.069" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240418 16:31:08.068" endtime="20240418 16:31:11.070"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Firstproductclicktowish}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:11.071" level="INFO">Clicking element '(//div[@data-component-type="s-search-result"]//span[@class="a-price-whole"])[1]'.</msg>
+<status status="PASS" starttime="20240418 16:31:11.070" endtime="20240418 16:31:11.155"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${firststartext}</var>
+<arg>${Firstproductcget}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:11.167" level="INFO">${firststartext} = Acer Aspire 12th Gen Intel Core i5-12400 Processor Desktop (Windows 11 Home/8 GB/512 GB SSD/Intel UHD Graphics) with Escan Anti-Virus, 250W Power Supply and 3 Years Warranty</msg>
+<status status="PASS" starttime="20240418 16:31:11.155" endtime="20240418 16:31:11.167"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${firststartext}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240418 16:31:11.167" level="INFO">Acer Aspire 12th Gen Intel Core i5-12400 Processor Desktop (Windows 11 Home/8 GB/512 GB SSD/Intel UHD Graphics) with Escan Anti-Virus, 250W Power Supply and 3 Years Warranty</msg>
+<status status="PASS" starttime="20240418 16:31:11.167" endtime="20240418 16:31:11.167"/>
+</kw>
+<kw name="Switch Window" library="Selenium2Library">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20240418 16:31:11.167" endtime="20240418 16:31:11.176"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${Addwishlist}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:11.176" endtime="20240418 16:31:15.439"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${Addwishlist}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:31:15.439" endtime="20240418 16:31:15.711"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:31:15.712" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:31:15.711" endtime="20240418 16:31:15.715"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Addwishlist}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:15.715" level="INFO">Clicking element '//input[@id='add-to-wishlist-button']'.</msg>
+<status status="PASS" starttime="20240418 16:31:15.715" endtime="20240418 16:31:15.793"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${CreatWishlist}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:15.793" endtime="20240418 16:31:16.243"/>
+</kw>
+<kw name="Double Click Element" library="Selenium2Library">
+<arg>${CreatWishlist}</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:16.243" level="INFO">Double clicking element '//span[contains(text(),'Create another Wish List')]'.</msg>
+<status status="PASS" starttime="20240418 16:31:16.243" endtime="20240418 16:31:16.596"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${Wishlistname}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:16.596" endtime="20240418 16:31:17.025"/>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${Wishlistname}</arg>
+<arg>New</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:17.025" level="INFO">Typing text 'New' into text field '//input[@id='list-name']'.</msg>
+<status status="PASS" starttime="20240418 16:31:17.025" endtime="20240418 16:31:17.071"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${CreateList}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:17.071" endtime="20240418 16:31:17.083"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${CreateList}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:17.083" level="INFO">Clicking element '//span[@id="wl-redesigned-create-list"]'.</msg>
+<status status="PASS" starttime="20240418 16:31:17.083" endtime="20240418 16:31:17.125"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${Viewwishlist}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240418 16:31:17.125" endtime="20240418 16:31:18.449"/>
+</kw>
+<kw name="Scroll Element Into View" library="Selenium2Library">
+<arg>${Viewwishlist}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240418 16:31:18.449" endtime="20240418 16:31:18.732"/>
+</kw>
+<kw name="Execute Javascript" library="Selenium2Library">
+<arg>window.scrollBy(0, 200);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240418 16:31:18.733" level="INFO">Executing JavaScript:
+window.scrollBy(0, 200);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240418 16:31:18.732" endtime="20240418 16:31:18.749"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${Viewwishlist}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:18.750" level="INFO">Clicking element '//a[text()='View Wish List']'.</msg>
+<status status="PASS" starttime="20240418 16:31:18.749" endtime="20240418 16:31:19.661"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${wishlisttext}</var>
+<arg>${WishlistverifyGet}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240418 16:31:19.677" level="INFO">${wishlisttext} = Acer Aspire 12th Gen Intel Core i5-12400 Processor Desktop (Windows 11 Home/8 GB/512 GB SSD/Intel UHD Graphics) with Escan Anti-Virus, 250W Power Supply and 3 Years Warranty</msg>
+<status status="PASS" starttime="20240418 16:31:19.661" endtime="20240418 16:31:19.677"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${wishlisttext}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240418 16:31:19.678" level="INFO">Acer Aspire 12th Gen Intel Core i5-12400 Processor Desktop (Windows 11 Home/8 GB/512 GB SSD/Intel UHD Graphics) with Escan Anti-Virus, 250W Power Supply and 3 Years Warranty</msg>
+<status status="PASS" starttime="20240418 16:31:19.677" endtime="20240418 16:31:19.678"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${firststartext}</arg>
+<arg>${wishlisttext}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240418 16:31:19.678" endtime="20240418 16:31:19.678"/>
+</kw>
+<status status="PASS" starttime="20240418 16:31:07.090" endtime="20240418 16:31:19.678"/>
+</kw>
+<status status="PASS" starttime="20240418 16:30:35.645" endtime="20240418 16:31:19.678"/>
+</test>
+<status status="PASS" starttime="20240418 16:30:35.547" endtime="20240418 16:31:19.678"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240418 16:30:35.644" level="ERROR">Error in file '/Users/chandu/PycharmProjects/Amazon/Resourses/Data.robot' on line 2: Setting variable '${childwindowtitle} Amazon.in: Buy Acer Aspire 12th Gen Intel Core i3-12100 Processor Desktop (Windows 11 Home/8 GB RAM/512 GB SATA SSD/MSO) with Standard Wired Keyboard and Wired Mouse, 3 Years Warranty Online at Low Prices in India | Acer Reviews &amp; Ratings' failed: Invalid variable name '${childwindowtitle} Amazon.in: Buy Acer Aspire 12th Gen Intel Core i3-12100 Processor Desktop (Windows 11 Home/8 GB RAM/512 GB SATA SSD/MSO) with Standard Wired Keyboard and Wired Mouse, 3 Years Warranty Online at Low Prices in India | Acer Reviews &amp; Ratings'.</msg>
+</errors>
+</robot>

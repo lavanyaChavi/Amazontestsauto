@@ -35,6 +35,3 @@ ${find}  //span[contains(text(), 'amazon')]
 ${AssignedPriceXPath}    //div[@data-component-type="s-search-result"]//span[@class="a-price-whole"]
 ${MinPrice}    30000
 ${MaxPrice}    50000
-${current_handle}    ${EMPTY}
-
-#//span[contains(text(),'Acer Aspire 12th Gen Intel Core i5-12400 Processor Desktop')]
